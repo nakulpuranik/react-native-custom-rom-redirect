@@ -28,7 +28,7 @@ public class RNSendIntentModule extends ReactContextBaseJavaModule {
 
   @Override
   public String getName() {
-    return "RNSendIntent";
+    return "RNSendIntentModule";
   }
 
   /**
@@ -41,6 +41,7 @@ public class RNSendIntentModule extends ReactContextBaseJavaModule {
   private Intent getAndroidComponentName(String manufacturerName) throws Exception{
     manufacturerName = manufacturerName.toLowerCase();
     Intent intent = new Intent();
+    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
     switch(manufacturerName){
         case "xiaomi" :
           //TOOD need to handle the navigation if Device is Mi A1 ?
